@@ -1,0 +1,23 @@
+{
+  "name": "E2E",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "codeceptjs run --verbose ./tests/E2E_test.js ./docker.conf.js",
+    "test:ls:ent1": "codeceptjs run --verbose --grep '(?=.*@landscape)(?=.*@ENT1)' --config=./docker.conf.js",
+    "test:pt:ent1": "codeceptjs run --verbose --grep '(?=.*@portrait)(?=.*@ENT1)' --config=./docker.p.conf.js",
+    "test:ls:ent4": "codeceptjs run --verbose --grep '(?=.*@landscape)(?=.*@ENT4)' --config=./docker.conf.js",
+    "test:pt:ent4": "codeceptjs run --verbose --grep '(?=.*@portrait)(?=.*@ENT4)' --config=./docker.p.conf.js",
+    "test:ado": "codeceptjs run tests/E2E_ado_test.js --config=./docker.p.conf.js --verbose",
+    "test:rim": "codeceptjs run --verbose --grep '(?=.*@portrait)(?=.*@rim)' --config=./docker.p.conf.js"
+  },
+  "author": "AShaporov@gk-software.com",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "^2.3.1",
+    "webdriverio": "^5.13.1"
+  },
+  "devDependencies": {
+    "@wdio/selenium-standalone-service": "^5.12.1"
+  }
+}
